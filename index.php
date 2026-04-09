@@ -32,12 +32,50 @@
 <?php include("includes/topbar.php"); ?>
 <!-- Cards -->
 <?php include("includes/Statistic.php"); ?>
+
+<div class="row mb-4">
+    <div class="col-md-4">
+        <div class="stat-card">
+            <div class="stat-header">
+                <span>Total Staff</span>
+                <span>12</span>
+            </div>
+            <div class="progress-container">
+                <div class="progress-fill" style="width: 70%; background-color: #80cbc4;"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="stat-card">
+            <div class="stat-header">
+                <span>Active Members</span>
+                <span>345</span>
+            </div>
+            <div class="progress-container">
+                <div class="progress-fill" style="width: 85%; background-color: #4db6ac;"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="stat-card">
+            <div class="stat-header">
+                <span>Books in Catalog</span>
+                <span>1,890</span>
+            </div>
+            <div class="progress-container">
+                <div class="progress-fill" style="width: 60%; background-color: #ce93d8;"></div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="row">
 
     <div class="dashboard">
         <div class="card" style="background-color: #d1c4e9;">
-            <a href="addmember.php"><div class="card-icon"><i class="fas fa-user-plus"></i></div>
-            <div class="card-title">Add Members</div></a>
+            <a href="staff.php"><div class="card-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+            <div class="card-title">View Staff</div></a>
         </div>
         <div class="card" style="background-color: #aed581;">
             <a href="member.php"><div class="card-icon"><i class="fas fa-users"></i></div>
@@ -56,8 +94,8 @@
             <div class="card-title">Returned Books</div></a>
         </div>
         <div class="card" style="background-color: #90a4ae;">
-            <a href="staff.php"><div class="card-icon"><i class="fas fa-chalkboard-teacher"></i></div>
-            <div class="card-title">View Staffs</div></a>
+            <a href="report.php"><div class="card-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+            <div class="card-title">Reports</div></a>
         </div>
         <div class="card" style="background-color: #81c784;">
              <a href="addstaff.php"><div class="card-icon"><i class="fas fa-book-reader"></i></div>

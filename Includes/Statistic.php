@@ -1,6 +1,6 @@
 <?php
 include("db.php");
-function countUser($conn) {
+function countstaffname($conn) {
 $sql = "SELECT COUNT(*) AS total FROM tblstaff";
 $result = $conn->query($sql);
 if ($result && $row = $result->fetch_assoc()) {
@@ -10,3 +10,4 @@ return 0;
 }
 
 ?>
+
