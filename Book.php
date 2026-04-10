@@ -31,6 +31,8 @@
 <div class="main">
 <!-- Topbar -->
 <?php include("includes/Topbar.php"); ?>
+
+<?php include("includes/Statistic.php"); ?>
 <div class="card-box">
 <?php $text = isset($_POST['txtsearch']) ? $_POST['txtsearch'] : null; ?>
 <?php $filterby = isset($_POST['filterby']) ? $_POST['filterby'] : null; ?>

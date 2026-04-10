@@ -38,10 +38,10 @@
         <div class="stat-card">
             <div class="stat-header">
                 <span>Total Staff</span>
-                <span>12</span>
+                <span class="stat-number"><?php echo $totalStaff; ?></span>
             </div>
             <div class="progress-container">
-                <div class="progress-fill" style="width: 70%; background-color: #80cbc4;"></div>
+                <div class="progress-fill" style="width: 100%; background-color: #80cbc4;"></div>
             </div>
         </div>
     </div>
@@ -50,10 +50,10 @@
         <div class="stat-card">
             <div class="stat-header">
                 <span>Active Members</span>
-                <span>345</span>
+                <span class="stat-number"><?php echo $totalMembers; ?></span>
             </div>
             <div class="progress-container">
-                <div class="progress-fill" style="width: 85%; background-color: #4db6ac;"></div>
+                <div class="progress-fill" style="width: 100%; background-color: #4db6ac;"></div>
             </div>
         </div>
     </div>
@@ -62,14 +62,15 @@
         <div class="stat-card">
             <div class="stat-header">
                 <span>Books in Catalog</span>
-                <span>1,890</span>
+                <span class="stat-number"><?php echo number_format($totalBooks); ?></span>
             </div>
             <div class="progress-container">
-                <div class="progress-fill" style="width: 60%; background-color: #ce93d8;"></div>
+                <div class="progress-fill" style="width: 100%; background-color: #ce93d8;"></div>
             </div>
         </div>
     </div>
 </div>
+
 <div class="row">
 
     <div class="dashboard">
@@ -86,7 +87,7 @@
             <div class="card-title">View Books</div></a>
         </div>
         <div class="card" style="background-color: #ff8a65;">
-             <a href="borrowbook.php"><div class="card-icon"><i class="fas fa-book-open"></i></div>
+             <a href="Borrowedbook.php"><div class="card-icon"><i class="fas fa-book-open"></i></div>
             <div class="card-title">Borrowed Books</div></a>
         </div>
         <div class="card" style="background-color: #e57373;">

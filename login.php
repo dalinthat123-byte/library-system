@@ -1,15 +1,13 @@
 <?php
-session_start(); // 1. Always start the session at the very top
-require("db.php"); // 2. Connect to DB before the logic starts
+session_start();
+require("db.php"); 
 
 $error_message = ""; 
 
 if(isset($_POST["submit"])){
     $u = $_POST['username'];
-    $p = md5($_POST['password']); // This turns "123" into "202cb962ac59075b964b07152d234b70"
+    $p = md5($_POST['password']);
 
-    // 3. Make sure 'staffname' still exists in your new table structure!
-    // If you only have 'staffid', change 'staffname' to 'staffid' below.
     $sql = "SELECT staffname FROM tblstaff WHERE username=? AND password=?";
     
     $stmt = $conn->prepare($sql);
@@ -20,7 +18,7 @@ if(isset($_POST["submit"])){
     if($row = $result->fetch_assoc()){
         $_SESSION['staffname'] = $row['staffname'];
         header("Location: index.php");
-        exit(); // 4. Always exit after a header redirect
+        exit();
     } else {
         $error_message = "Invalid username or password!!";
     }
