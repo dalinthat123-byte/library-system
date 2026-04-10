@@ -62,7 +62,7 @@ if(isset($_POST['btnsubmit'])){
     require("db.php");
     $StaffID = $_GET['StaffID'];
     $StaffName = $_POST["StaffName"];
-    $Username = $_POST["username"]; // Fixed: matched to lowercase 'name' in HTML
+    $Username = $_POST["username"]; 
     $Password = $_POST["password"]; 
     $cPassword = $_POST["cpassword"]; 
 

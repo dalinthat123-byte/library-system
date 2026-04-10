@@ -63,39 +63,41 @@
 <?php
 require("db.php");
 $sql = "SELECT * FROM tblbook";
-//Search
+$stmt = null;
+
 if(isset($_POST["btnsearch"])){
-switch($filterby){
-case 'Isbn': $sql .= " where Isbn=?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param('s',$text);
-break;
-case 'Title': $sql .= " WHERE Title like CONCAT('%',?,'%')";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param('s',$text);
-break;
-case 'Author': $sql .= " WHERE Author like CONCAT('%',?,'%')";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param('s',$text);
-break;
+    switch($filterby){
+        case 'Isbn': $sql .= " WHERE Isbn=?"; break;
+        case 'Title': $sql .= " WHERE Title LIKE CONCAT('%',?,'%')"; break;
+        case 'Author': $sql .= " WHERE Author LIKE CONCAT('%',?,'%')"; break;
+    }
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('s', $text);
+} elseif(isset($_POST["btnavailable"])) {
+    $sql .= " WHERE Status = 'Available'";
+    $stmt = $conn->prepare($sql);
+} elseif(isset($_POST["btnborrowed"])) {
+    $sql .= " WHERE Status = 'Borrowed'";
+    $stmt = $conn->prepare($sql);
+} else {
+    $stmt = $conn->prepare($sql);
 }
-}else{
-$stmt = $conn->prepare($sql);
-}
+
 $stmt->execute();
 $result = $stmt->get_result();
+
 while($row = $result->fetch_assoc()){
-echo "<tr>";
-echo "<td>" . $row["Isbn"] . "</td>";
-echo "<td>" . $row["Title"] . "</td>";
-echo "<td>" . $row["Author"] . "</td>";
-echo "<td>" . $row["Status"] . "</td>";
-echo "<td>
-<a href='Editbook.php?Isbn=" . $row["Isbn"] . "' class='btn btn-sm btn-warning'>Edit</a> |
- <a href='Deletebook.php?Isbn=" . $row["Isbn"] . "' class='btn btn-sm btn-danger'
- onclick='return confirm(\"Sure?\");'>Delete</a>
-</td>";
-echo "</tr>";
+    echo "<tr>";
+    echo "<td>" . $row["Isbn"] . "</td>";
+    echo "<td>" . $row["Title"] . "</td>";
+    echo "<td>" . $row["Author"] . "</td>";
+    echo "<td>" . $row["Status"] . "</td>";
+    echo "<td>
+        <a href='Editbook.php?Isbn=" . $row["Isbn"] . "' class='btn btn-sm btn-warning'>Edit</a> | 
+        <a href='Deletebook.php?Isbn=" . $row["Isbn"] . "' class='btn btn-sm btn-danger' 
+        onclick='return confirm(\"Sure?\");'>Delete</a>
+    </td>";
+    echo "</tr>";
 }
 ?>
 </tbody>

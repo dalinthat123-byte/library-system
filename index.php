@@ -99,16 +99,12 @@
             <div class="card-title">Reports</div></a>
         </div>
         <div class="card" style="background-color: #81c784;">
-             <a href="addstaff.php"><div class="card-icon"><i class="fas fa-book-reader"></i></div>
+             <a href="Nonreturnedbook.php"><div class="card-icon"><i class="fas fa-book-reader"></i></div>
             <div class="card-title">Non-Returned Books</div></a>
         </div>
         <div class="card" style="background-color: #aed581;">
              <a href="aboutus.php"><div class="card-icon"><i class="fas fa-history"></i></div>
             <div class="card-title">About Us</div></a>
-        </div>
-        <div class="card" style="background-color: #ba68c8;">
-             <a href="logout.php"><div class="card-icon"><i class="fas fa-sign-out-alt"></i></div>
-            <div class="card-title">Sign Out</div></a>
         </div>
     </div>
 

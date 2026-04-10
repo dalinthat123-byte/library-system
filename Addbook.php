@@ -52,7 +52,6 @@ if(isset($_POST['btnsubmit'])){
     $Author = $_POST["Author"];
     $Status = $_POST["Status"];
 
-    // Use try-catch to catch the "Fatal Error" before it crashes the page
     try {
         $sql = "INSERT INTO tblbook (Isbn, Title, Author, Status) VALUES (?, ?, ?, ?);";
         $stmt = $conn->prepare($sql);
@@ -63,7 +62,6 @@ if(isset($_POST['btnsubmit'])){
             exit();
         }
     } catch (mysqli_sql_exception $e) {
-        // Check specifically for error code 1062 (Duplicate Entry)
         if ($conn->errno == 1062) {
             echo "<div class='alert alert-warning mt-3'>
                     <i class='fa-solid fa-circle-exclamation'></i> 

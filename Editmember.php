@@ -80,7 +80,6 @@ if(isset($_POST['btnsubmit'])){
     $Phone = $_POST["Phone"]; 
     $JoinDate = $_POST["JoinDate"]; 
 
-    // Corrected SQL for tblmember
     $sql = "UPDATE tblmember SET Name=?, Gender=?, Phone=?, JoinDate=? WHERE ID=?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("ssssi", $Name, $Gender, $Phone, $JoinDate, $ID);

@@ -1,7 +1,6 @@
 <?php
 include("db.php");
 
-// Function to get counts dynamically
 function getTableCount($conn, $table) {
     $sql = "SELECT COUNT(*) AS total FROM $table";
     $result = $conn->query($sql);

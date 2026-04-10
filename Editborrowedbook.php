@@ -1,7 +1,6 @@
 <?php
 require("db.php");
 
-// 1. Get the ID from URL
 if(isset($_GET['BorrowID'])) {
     $BorrowID = $_GET['BorrowID'];
 } else {
@@ -9,12 +8,11 @@ if(isset($_GET['BorrowID'])) {
     exit();
 }
 
-// 2. Handle Update
 if(isset($_POST['btnsubmit'])){
     $Isbn = $_POST["Isbn"];
     $StaffID = $_POST["StaffID"];
     $BorrowDate = $_POST["BorrowDate"]; 
-    $HiddenID = $_POST["HiddenID"]; // Retrieve the ID from the hidden field
+    $HiddenID = $_POST["HiddenID"];
 
     $sql = "UPDATE tblborrowbook SET Isbn=?, StaffID=?, BorrowDate=? WHERE BorrowID=?";
     $stmt = $conn->prepare($sql);
@@ -32,7 +30,7 @@ if(isset($_POST['btnsubmit'])){
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Edit Borrow Book</title>
+    <title>Edit Borrowed Book</title>
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">

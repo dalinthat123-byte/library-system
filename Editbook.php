@@ -35,10 +35,9 @@ require("db.php");
 $Isbn = $_GET['Isbn'];
 
 if(!isset($_POST['btnsubmit'])){
-    // 1. Fetch current book data
     $sql = "SELECT * FROM tblbook WHERE Isbn=?;";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $Isbn); // Use "s" for string ISBN
+    $stmt->bind_param("s", $Isbn);
     $stmt->execute();
     $result = $stmt->get_result();
     
@@ -76,11 +75,9 @@ if(isset($_POST['btnsubmit'])){
     $Author = $_POST["Author"];
     $Status = $_POST["Status"]; 
 
-    // 2. Updated SQL for tblbook (No MD5 needed for Status)
     $sql = "UPDATE tblbook SET Title=?, Author=?, Status=? WHERE Isbn=?";
     $stmt = $conn->prepare($sql);
     
-    // "ssss" = 4 strings
     $stmt->bind_param("ssss", $Title, $Author, $Status, $Isbn);
 
     if($stmt->execute()){

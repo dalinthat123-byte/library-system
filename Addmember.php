@@ -64,13 +64,11 @@
 if(isset($_POST['btnsubmit'])){
     require("db.php");
     
-    // Collect data from POST
     $Name = $_POST["Name"];
     $Gender = $_POST["Gender"];
     $Phone = $_POST["Phone"];
     $JoinDate = $_POST["JoinDate"];
 
-    // 1. Prepare the SQL
     $sql = "INSERT INTO tblmember(Name, Gender, Phone, JoinDate) VALUES(?,?,?,?);";
     $stmt = $conn->prepare($sql);
 

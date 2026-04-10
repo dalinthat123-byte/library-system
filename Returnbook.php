@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Users</title>
+    <title>Returnbook</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
@@ -44,7 +44,6 @@
             <tbody>
                 <?php
                 require("db.php");
-                // Consistent sorting by the primary key
                 $sql = "SELECT * FROM vreturned ORDER BY returnid ASC";
                 
                 $stmt = $conn->prepare($sql);
@@ -53,7 +52,6 @@
                 while($row = $result->fetch_assoc()){
                     echo "<tr>";
                     echo "<td>" . $row["returnid"] . "</td>";
-                    // Ensure 'name' exists in your vreturned view!
                     echo "<td>" . $row["name"] . "</td>"; 
                     echo "<td>" . $row["isbn"] . "</td>";
                     echo "<td>" . $row["title"] . "</td>";
