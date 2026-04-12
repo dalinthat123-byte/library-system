@@ -33,9 +33,8 @@
                         <th>Name</th>
                         <th>Isbn</th>
                         <th>Title</th>
-                        <th>Staff Name</th>
                         <th>Borrowed Date</th>
-                        <th>Options</th>
+                        <th>Staff Name</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -55,19 +54,11 @@
                         echo "<td>" . $row["title"] . "</td>";
                         echo "<td>" . $row["borrowdate"] . "</td>";
                         echo "<td>" . $row["staffname"] . "</td>";
-                        echo "<td>
-                            <a href='Editnonreturnedbook.php?borrowid=" . $row["borrowid"] . "' class='btn btn-sm btn-warning'>Edit</a> |
-                            <a href='Deletenonreturnedbook.php?borrowid=" . $row["borrowid"] . "' class='btn btn-sm btn-danger'
-                            onclick='return confirm(\"Are you sure you want to delete this?\");'>Delete</a>
-                        </td>";
                         echo "</tr>";
                     }
                     ?>
                 </tbody>
             </table>
-            <p>
-                <a href="Addnonreturnedbook.php" class="btn btn-sm btn-success">AddNew</a>
-            </p>
         </div>
     </div>
 </body>

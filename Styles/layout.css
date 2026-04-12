@@ -64,10 +64,6 @@ text-align: left;
     font-family: "Poppins";
 }
 
-body {
-    margin: 0;
-}
-
 .bg-container {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
                 url('../images/bg.jpg'); 
@@ -193,10 +189,7 @@ button:hover {
     font-weight: 600;
 }
 body {
-            font-family: "Poppins";
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
+            background-color: #f4f6f9;
         }
 
         .header {
@@ -223,12 +216,6 @@ body {
             padding: 20px;
             text-align: center;
         }
-        * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins";
-}
 .dashboard {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
