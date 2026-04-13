@@ -74,45 +74,61 @@
 <div class="row">
 
     <div class="dashboard">
-        <div class="card" style="background-color: #d1c4e9;">
+        <div class="card" style="background-color: #ffffff;">
             <a href="staff.php"><div class="card-icon"><i class="fas fa-chalkboard-teacher"></i></div>
             <div class="card-title">View Staff</div></a>
         </div>
-        <div class="card" style="background-color: #aed581;">
+
+        <div class="card" style="background-color: #ffffff;">
             <a href="member.php"><div class="card-icon"><i class="fas fa-users"></i></div>
             <div class="card-title">View Members</div></a>
         </div>
-        <div class="card" style="background-color: #fff176;">
-             <a href="book.php"><div class="card-icon"><i class="fas fa-book-medical"></i></div>
+
+        <div class="card" style="background-color: #ffffff;">
+             <a href="book.php"><div class="card-icon"><i class="fa-solid fa-book-bookmark"></i></div>
             <div class="card-title">View Books</div></a>
         </div>
-        <div class="card" style="background-color: #ff8a65;">
+
+        <div class="card" style="background-color: #ffffff;">
              <a href="Borrowedbook.php"><div class="card-icon"><i class="fas fa-book-open"></i></div>
-            <div class="card-title">Borrowed Books</div></a>
+            <div class="card-title">Borrowed Books Record</div></a>
         </div>
-        <div class="card" style="background-color: #e57373;">
+
+        <div class="card" style="background-color: #ffffff;">
              <a href="returnbook.php"><div class="card-icon"><i class="fas fa-book-reader"></i></div>
-            <div class="card-title">Returned Books</div></a>
+            <div class="card-title">Returned Books Record</div></a>
+            
         </div>
-        <div class="card" style="background-color: #90a4ae;">
-            <a href="report.php"><div class="card-icon"><i class="fas fa-chalkboard-teacher"></i></div>
-            <div class="card-title">Reports</div></a>
-        </div>
-        <div class="card" style="background-color: #81c784;">
-             <a href="Nonreturnedbook.php"><div class="card-icon"><i class="fas fa-book-reader"></i></div>
+                <div class="card" style="background-color: #ffffff;">
+             <a href="Nonreturnedbook.php"><div class="card-icon"><i class="fa-solid fa-book-journal-whills"></i></div>
             <div class="card-title">Non-Returned Books</div></a>
         </div>
-        <div class="card" style="background-color: #aed581;">
-             <a href="aboutus.php"><div class="card-icon"><i class="fas fa-history"></i></div>
-            <div class="card-title">About Us</div></a>
-        </div>
     </div>
 
-    <div class="footer">
-        Build Bright Library Management System
-    </div>
+    <!--Footer-->
+   <div class="container"> 
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center"> 
+            <a href="index.php" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1"> 
+                <i class="fa-solid fa-book-bookmark" style="font-size: 24px;"></i>
+            </a> 
+            <span class="mb-3 mb-md-0 text-body-secondary">© 2026 Library Management System</span> 
+        </div> 
 
-    <script src="https://kit.fontawesome.com/your-font-awesome-kit-id.js" crossorigin="anonymous"></script>
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex"> 
+            <li class="ms-3">
+                <a class="text-body-secondary" href="book.php" title="View Books">
+                    <i class="fa-solid fa-book-atlas" style="font-size: 24px;"></i>
+                </a>
+            </li> 
+            <li class="ms-3">
+                <a class="text-body-secondary" href="member.php" title="View Members">
+                    <i class="fa-regular fa-address-card" style="font-size: 24px;"></i>
+                </a>
+            </li> 
+        </ul> 
+    </footer> 
+</div>
 
 </div>
 </body>
