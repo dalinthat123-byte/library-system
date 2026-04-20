@@ -100,14 +100,14 @@
                 echo "<td>" . $row["Gender"] . "</td>";
                 echo "<td>" . $row["Phone"] . "</td>";
                 echo "<td>" . $row["JoinDate"] . "</td>";
-               echo "<td>
-                        <a href='EditMember.php?ID=" . $row["ID"] . "' class='btn btn-sm btn-warning'>Edit</a> |
+               echo "<td align='center' width='1%' style='white-space: nowrap;'>
+                        <a href='EditMember.php?ID=" . $row["ID"] . "' class='btn btn-sm text-white' style='background-color: #15317E;'><i class='fa-solid fa-user-plus'></i></a> |
                         <button type='button' 
                                 class='btn btn-sm btn-danger' 
                                 data-bs-toggle='modal' 
                                 data-bs-target='#deleteModal' 
                                 data-id='" . $row["ID"] . "'>
-                            Delete
+                            <i class='fa-solid fa-trash'></i>
                         </button>
                     </td>";
             }
@@ -116,7 +116,7 @@
         </table>
         
         <p>
-            <a href="AddMember.php" class="btn btn-sm btn-success">Add New Member</a>
+            <a href="AddMember.php" class='btn btn-sm text-white' style='background-color: #045f5f;'><i class='fa-solid fa-plus'></i> Add New Member</a>
         </p>
     </div>
 

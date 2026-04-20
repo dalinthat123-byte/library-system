@@ -105,8 +105,8 @@
                         echo "<td>" . $row["Title"] . "</td>";
                         echo "<td>" . $row["StaffName"] . "</td>";
                         echo "<td>" . $row["BorrowDate"] . "</td>";
-                        echo "<td>
-                            <a href='Editborrowedbook.php?BorrowID=" . $row["BorrowID"] . "' class='btn btn-sm btn-warning'>Edit</a>
+                        echo "<td align='center' width='1%' style='white-space: nowrap;'>
+                            <a href='Editborrowedbook.php?BorrowID=" . $row["BorrowID"] . "' class='btn btn-sm text-white' style='background-color: #15317E;'><i class='fa-solid fa-pen-to-square'></i></a>
                         </td>";
                         echo "</tr>";
                     }
@@ -114,7 +114,7 @@
                 </tbody>
             </table>
             <p>
-                <a href="Addborrowedbook.php" class="btn btn-sm btn-success">AddNew</a>
+                <a href="Addborrowedbook.php" class="btn btn-sm btn-success"><i class='fa-solid fa-plus'></i> AddNew</a>
             </p>
         </div>
         <!--Footer-->

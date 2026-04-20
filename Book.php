@@ -92,10 +92,10 @@ while($row = $result->fetch_assoc()){
     echo "<td>" . $row["Title"] . "</td>";
     echo "<td>" . $row["Author"] . "</td>";
     echo "<td>" . $row["Status"] . "</td>";
-    echo "<td>
-        <a href='Editbook.php?Isbn=" . $row["Isbn"] . "' class='btn btn-sm btn-warning'>Edit</a> | 
+    echo "<td align='center' width='1%' style='white-space: nowrap;'>
+        <a href='Editbook.php?Isbn=" . $row["Isbn"] . "' class='btn btn-sm text-white' style='background-color: #15317E;'><i class='fa-solid fa-pen-to-square'></i></a> | 
         <a href='Deletebook.php?Isbn=" . $row["Isbn"] . "' class='btn btn-sm btn-danger' 
-        onclick='return confirm(\"Sure?\");'>Delete</a>
+        onclick='return confirm(\"Sure?\");'><i class='fa-solid fa-trash'></i></a>
     </td>";
     echo "</tr>";
 }
@@ -103,7 +103,7 @@ while($row = $result->fetch_assoc()){
 </tbody>
 </table>
 <p>
-<a href="Addbook.php" class="btn btn-sm btn-success">Add New Book</a>
+<a href="Addbook.php" class='btn btn-sm text-white' style='background-color: #045f5f;'><i class ='fa-solid fa-plus'></i> Add New Book</a>
 </p>
 </div>
 <!--Footer-->

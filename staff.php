@@ -80,10 +80,10 @@ echo "<td>" . $row["StaffID"] . "</td>";
 echo "<td>" . $row["StaffName"] . "</td>";
 echo "<td>" . $row["Username"] . "</td>";
 echo "<td>" . $row["Password"] . "</td>";
-echo "<td>
-<a href='Editstaff.php?StaffID=" . $row["StaffID"] . "' class='btn btn-sm btn-warning'>Edit</a> |
+echo "<td align='center' width='1%' style='white-space: nowrap;'>
+<a href='Editstaff.php?StaffID=" . $row["StaffID"] . "' class='btn btn-sm text-white' style='background-color: #15317E;'><i class='fa-solid fa-user-pen'></i></a> |
  <a href='Deletestaff.php?StaffID=" . $row["StaffID"] . "' class='btn btn-sm btn-danger'
- onclick='return confirm(\"Sure?\");'>Delete</a>
+ onclick='return confirm(\"Sure?\");'><i class='fa-solid fa-trash'></i></a>
 </td>";
 echo "</tr>";
 }
@@ -91,7 +91,7 @@ echo "</tr>";
 </tbody>
 </table>
 <p>
-<a href="Addstaff.php" class="btn btn-sm btn-success">AddNew Staff</a>
+<a href="Addstaff.php" class="btn btn-sm text-white" style="background-color: #045F5F;"><i class='fa-solid fa-plus'></i> AddNew Staff</a>
 </p>
 </div>
 <!--Footer-->

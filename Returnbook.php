@@ -122,7 +122,7 @@
                             echo "<td>" . $row["returndate"] . "</td>";
                             echo "<td class='text-center'>
                                 <div class='btn-group'>
-                                    <a href='EditReturnbook.php?returnid=" . $row["returnid"] . "' class='btn btn-sm btn-warning'><i class='fas fa-edit'></i> Edit</a>
+                                    <a href='EditReturnbook.php?returnid=" . $row["returnid"] . "' class='btn btn-sm text-white' style='background-color: #15317E;'><i class='fas fa-edit'></i></a>
                                 </div>
                             </td>";
                             echo "</tr>";
@@ -131,7 +131,7 @@
                     </tbody>
                 </table>
                 <p>
-                    <a href="Addreturnbook.php" class="btn btn-sm btn-success">AddNew</a>
+                    <a href="Addreturnbook.php" class="btn btn-sm btn-success"><i class='fa-solid fa-plus'></i> AddNew</a>
                 </p>
             </div>
         </div>
