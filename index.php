@@ -41,7 +41,7 @@
                 <span class="stat-number"><?php echo $totalStaff; ?></span>
             </div>
             <div class="progress-container">
-                <div class="progress-fill" style="width: 100%; background-color: #80cbc4;"></div>
+                <div class="progress-fill" style="width: 100%; background: linear-gradient(to right, #16a085, #f4d03f)"></div>
             </div>
         </div>
     </div>
@@ -53,7 +53,7 @@
                 <span class="stat-number"><?php echo $totalMembers; ?></span>
             </div>
             <div class="progress-container">
-                <div class="progress-fill" style="width: 100%; background-color: #4db6ac;"></div>
+                <div class="progress-fill" style="width: 100%; background: linear-gradient(to right, #3431e8, #d1d1f4)"></div>
             </div>
         </div>
     </div>
@@ -65,7 +65,7 @@
                 <span class="stat-number"><?php echo number_format($totalBooks); ?></span>
             </div>
             <div class="progress-container">
-                <div class="progress-fill" style="width: 100%; background-color: #ce93d8;"></div>
+                <div class="progress-fill" style="width: 100%; background: linear-gradient(to right, #ff6e7f, #bfe9ff)"></div>
             </div>
         </div>
     </div>
