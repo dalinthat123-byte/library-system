@@ -9,7 +9,6 @@ background-color: #f4f6f9;
     height: 100vh;
     position: fixed;
     background: linear-gradient(to bottom, #8360c3, #2ebf91);
-   /* background: linear-gradient(to bottom, #3f2b96, #a8c0ff);*/
     color: white;
     padding-top: 20px;
     z-index: 1000;

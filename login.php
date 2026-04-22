@@ -48,7 +48,7 @@ if(isset($_POST["submit"])){
     <div class="bg-container">
         <div class="login-card">
             <h1>WELCOME BACK</h1>
-            <p class="subtitle">Enter your credentials to access the BBL</p>
+            <p class="subtitle">Enter your credentials to access the LDK</p>
             <p class="role">- Librarian -</p>
 
             <form method="POST" action="">

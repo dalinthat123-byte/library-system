@@ -41,7 +41,8 @@
                 <span class="stat-number"><?php echo $totalStaff; ?></span>
             </div>
             <div class="progress-container">
-                <div class="progress-fill" style="width: 100%; background: linear-gradient(to right, #16a085, #f4d03f)"></div>
+                <div class="progress-fill" style="width: 100%; 
+                background: linear-gradient(to right, #16a085, #f4d03f)"></div>
             </div>
         </div>
     </div>

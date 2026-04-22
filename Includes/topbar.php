@@ -1,5 +1,5 @@
 <div class="topbar d-flex justify-content-between align-items-center">
-    <h5 class="mb-0" style="font-weight: 600; color: #ffffff;">Build Bright Library</h5>
+    <h5 class="mb-0" style="font-weight: 600; color: #ffffff;">Linnelry Library</h5>
     
     <?php
     if (session_status() === PHP_SESSION_NONE) {
