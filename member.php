@@ -101,7 +101,7 @@
                 echo "<td>" . $row["Phone"] . "</td>";
                 echo "<td>" . $row["JoinDate"] . "</td>";
                echo "<td align='center' width='1%' style='white-space: nowrap;'>
-                        <a href='EditMember.php?ID=" . $row["ID"] . "' class='btn btn-sm text-white' style='background-color: #15317E;'><i class='fa-solid fa-user-plus'></i></a> |
+                        <a href='EditMember.php?ID=" . $row["ID"] . "' class='btn btn-sm text-white' style='background-color: #15317E;'><i class='fa-solid fa-user-pen'></i></a> |
                         <button type='button' 
                                 class='btn btn-sm btn-danger' 
                                 data-bs-toggle='modal' 

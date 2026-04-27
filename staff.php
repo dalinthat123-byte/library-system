@@ -82,8 +82,13 @@ echo "<td>" . $row["Username"] . "</td>";
 echo "<td>" . $row["Password"] . "</td>";
 echo "<td align='center' width='1%' style='white-space: nowrap;'>
 <a href='Editstaff.php?StaffID=" . $row["StaffID"] . "' class='btn btn-sm text-white' style='background-color: #15317E;'><i class='fa-solid fa-user-pen'></i></a> |
- <a href='Deletestaff.php?StaffID=" . $row["StaffID"] . "' class='btn btn-sm btn-danger'
- onclick='return confirm(\"Sure?\");'><i class='fa-solid fa-trash'></i></a>
+ <button type='button' 
+            class='btn btn-sm btn-danger' 
+            data-bs-toggle='modal' 
+            data-bs-target='#deleteModal' 
+            data-id='" . $row["StaffID"] . "'>
+            <i class='fa-solid fa-trash'></i>
+        </button>
 </td>";
 echo "</tr>";
 }
@@ -119,5 +124,36 @@ echo "</tr>";
     </footer> 
 </div>
 </div>
+
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel">Confirm Deletion</h5>
+        <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to delete this Staff?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <a href="#" id="confirmDeleteBtn" class="btn btn-danger">Delete Staff</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <script>
+        const deleteModal = document.getElementById('deleteModal');
+        if (deleteModal) {
+            deleteModal.addEventListener('show.bs.modal', event => {
+                const button = event.relatedTarget;
+                const StaffID = button.getAttribute('data-id');
+                const confirmBtn = deleteModal.querySelector('#confirmDeleteBtn');
+                confirmBtn.href = 'Deletestaff.php?StaffID=' + StaffID;
+            });
+        }
+    </script>
+
 </body>
 </html>

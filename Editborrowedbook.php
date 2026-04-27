@@ -76,8 +76,22 @@ if(isset($_POST['btnsubmit'])){
             <input type="text" class="form-control" name="Isbn" value="<?php echo $row['Isbn']; ?>" required>
         </div>
         <div class="col-md-6 mb-3">
-            <label class="form-label">StaffID</label>
-            <input type="text" class="form-control" name="StaffID" value="<?php echo $row['StaffID']; ?>" required>
+            <label class="form-label">Staff Name</label>
+            <select class="form-select" name="StaffID" required>
+            <option value="" selected disabled>-- Select Staff --</option>
+            <?php
+            require("db.php");
+            $staff_sql = "SELECT StaffID, StaffName FROM tblstaff ORDER BY StaffID ASC";
+            $staff_result = $conn->query($staff_sql);
+            if ($staff_result->num_rows > 0) {
+                while($staff = $staff_result->fetch_assoc()) {
+                    echo "<option value='".$staff['StaffID']."'>".$staff['StaffName']."</option>";
+                }
+            } else {
+                echo "<option value=''>No Staff Found</option>";
+            }
+            ?>
+            </select>
         </div>
         <div class="col-md-6 mb-3">
             <label class="form-label">Borrow Date</label>
