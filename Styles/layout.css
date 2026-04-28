@@ -92,18 +92,19 @@ text-align: left;
 }
 
 h1 {
-    color: #040c38 ; 
+    color: #221412 ;
+    font-family: "Bungee";
     font-size: 1.8rem;
     margin-bottom: 10px;
 }
 .subtitle {
-    color: #061048;
+    color: #3e2723;
     font-size: 0.9rem;
     margin-bottom: 5px;
 }
 
 .role {
-    color: #17456e; 
+    color: #3e2723; 
     font-weight: bold;
     margin-bottom: 25px;
     font-size: 0.8rem;
