@@ -1,4 +1,5 @@
 <?php
+$error_message = "";
 if(isset($_POST['btnsubmit'])){
     require("db.php");
     
@@ -7,15 +8,24 @@ if(isset($_POST['btnsubmit'])){
     $StaffID = $_POST["StaffID"];
     $BorrowDate = $_POST["BorrowDate"];
 
-    $sql = "INSERT INTO tblborrowbook(ID, Isbn, StaffID, BorrowDate) VALUES(?,?,?,?);";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssss", $ID, $Isbn, $StaffID, $BorrowDate);
+    try {
+        $sql = "INSERT INTO tblborrowbook(ID, Isbn, StaffID, BorrowDate) VALUES(?,?,?,?);";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("ssss", $ID, $Isbn, $StaffID, $BorrowDate);
 
-    if($stmt->execute() === true){ 
-        header("Location: Borrowedbook.php"); 
-        exit(); 
-    } else { 
-        echo "Error: " . $conn->error; 
+        if($stmt->execute() === true){ 
+            header("Location: Borrowedbook.php"); 
+            exit(); 
+        }
+    } catch (mysqli_sql_exception $e) {
+        if ($conn->errno == 1062) {
+            $error_message = "<div class='alert alert-warning mt-3'>
+                                <i class='fa-solid fa-circle-exclamation'></i> 
+                                <strong>Duplicate Borrowed Book!</strong> This Book has <b>$Isbn</b> already been borrowed in the library.
+                              </div>";
+        } else {
+            $error_message = "<div class='alert alert-danger mt-3'>Error: " . $e->getMessage() . "</div>";
+        }
     }
 }
 ?>
@@ -51,6 +61,9 @@ if(isset($_POST['btnsubmit'])){
     <?php include("includes/Topbar.php"); ?>
     <div class="card-box">
     <h5>Add Borrow book</h5>
+
+    <?php echo $error_message; ?>
+
     <form method="post">
         <div class="col-md-6 mb-3">
             <label class="form-label">MemberID</label>
